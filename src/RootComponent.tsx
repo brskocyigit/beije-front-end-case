@@ -1,16 +1,17 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import NotFoundPage from './pages/NotFoundPage'
+import Home from './pages/Home';
+import Navbar from './components/Navbar/Navbar';
+
 import { ROUTES } from './resources/routes-constants'
-import './styles/main.sass'
+
 
 const RootComponent: React.FC = () => {
     return (
         <Router>
+            <Navbar/>
             <Routes>
-                <Route path="*" element={<NotFoundPage />} />
-                <Route path={ROUTES.HOMEPAGE_ROUTE} element={<HomePage />} />
+                <Route path={ROUTES.HOMEPAGE_ROUTE} element={<Home />} />
             </Routes>
         </Router>
     )

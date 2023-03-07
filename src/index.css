@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Gorditas&family=Poppins:wght@400;500;700&family=Rubik:wght@400;500;700&family=Zen+Dots&display=swap');
+
+@layer base {
+    html{
+        font-family: 'Poppins',sans-serif;
+    }
+}
+
+@layer components {
+    .navbar-links{
+        @apply w-full h-[1px] rounded-full bg-black invisible group-hover:visible
+    }
+
+    .navbar-li-style{
+        @apply text-xl tracking-[-0.01em] font-[400]
+    }
+
+    .navbar-logo-style{
+        @apply flex items-center justify-center w-9 h-9 mx-2 cursor-pointer rounded-full hover:bg-gray-200 transform transition-colors duration-300
+    }
+}
