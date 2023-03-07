@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Home: React.FC = () => {
+const NotFound: React.FC = () => {
     return (
         <div className='h-screen'>
-            Ana sayfa
+            Not Found
         </div>
     )
 }
 
-export default Home
+export default NotFound
