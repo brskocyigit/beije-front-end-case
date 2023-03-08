@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { AuthIcon, CloseMenuIcon, GroceryIcon, HamburgerIcon } from '../../icons/Icon'
 
 interface IProps {
-    setModal?: React.Dispatch<React.SetStateAction<boolean>>
     modal?: boolean
     onClick?: React.MouseEventHandler<HTMLDivElement>
 }
