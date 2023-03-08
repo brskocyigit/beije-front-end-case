@@ -38,7 +38,7 @@ const CreatePackage = () => {
                     beije Tampon
                 </div>
             </div>
-            <div>
+            <div className='flex w-full'>
                 {open.normal && <NormalPackage />}
                 {open.daily && <DailyPackage />}
                 {open.tampon && <TamponPackage />}
