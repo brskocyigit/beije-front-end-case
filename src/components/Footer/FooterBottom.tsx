@@ -6,7 +6,7 @@ const FooterBottom: React.FC = () => {
     return (
         <>
             <div className="flex mt-5 max-[1024px]:flex-col">
-                <span className="mr-3 mb-2 text-center text-[#ffffffb2] cursor-pointer">2023 beije.Tüm hakları saklıdır</span>
+                <span className="mr-3 mb-2 text-center text-[#ffffffb2]">2023 beije.Tüm hakları saklıdır</span>
                 <span className="mr-3 mb-2 text-center text-[#ffffffb2] cursor-pointer">KVKK Aydınlatma Metni</span>
                 <span className="mr-3 mb-2 text-center text-[#ffffffb2] cursor-pointer">Üyelik Sözleşmesi</span>
                 <span className="mr-3 mb-2 text-center text-[#ffffffb2] cursor-pointer">Gizlilik Politikası</span>

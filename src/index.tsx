@@ -2,13 +2,15 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-import './index.css';
+import './index.css'
+import { Provider } from 'react-redux'
+import { store } from './redux/index'
 
 const root = createRoot(document.getElementById('root')!) // createRoot(container!) if you use TypeScript
 root.render(
-    <React.StrictMode>
+    <Provider store={store}>
         <App />
-    </React.StrictMode>
+    </Provider>
 )
 
 // If you want your app to work offline and load faster, you can change

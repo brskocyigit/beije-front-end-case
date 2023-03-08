@@ -1,13 +1,13 @@
 import React from 'react'
-
 //Icon propları için type check
 interface IProps {
     children?: any
-    className: string
+    className: string,
+    
 }
 
 //Iconların SVG elementleri için hazırlanmış template function component
-const Svg: React.FC<IProps> = ({ children, className }) => {
+const Svg: React.FC<IProps> = ({ children, className}) => {
     return (
         <svg viewBox="0 0 24 24" className={`fill-current ${className}`}>
             {children}
@@ -69,11 +69,33 @@ export const AuthIcon: React.FC<IProps> = ({ className }) => {
 }
 
 //Social Media Icons
-export const FacebookIcon:React.FC<IProps>=({className})=>{
+export const FacebookIcon: React.FC<IProps> = ({ className }) => {
     return (
         <Svg className={className}>
             <g>
-            <path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"/>
+                <path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z" />
+            </g>
+        </Svg>
+    )
+}
+
+//Hamburger Menu Icon
+export const HamburgerIcon: React.FC<IProps> = ({ className}) => {
+    return (
+        <Svg className={className}>
+            <g>
+                <path d="M3 12h18M3 6h18M3 18h18" stroke="#343131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+            </g>
+        </Svg>
+    )
+}
+
+//Close Menu Icon
+export const CloseMenuIcon: React.FC<IProps> = ({ className }) => {
+    return (
+        <Svg className={className}>
+            <g>
+                <path d="M18 6 6 18M6 6l12 12" stroke="#343131" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
             </g>
         </Svg>
     )

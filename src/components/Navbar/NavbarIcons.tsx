@@ -1,7 +1,15 @@
 import React from 'react'
-import { AuthIcon, GroceryIcon} from '../../icons/Icon'
+import { useDispatch } from 'react-redux'
+import { AuthIcon, CloseMenuIcon, GroceryIcon, HamburgerIcon } from '../../icons/Icon'
 
-const NavbarIcons: React.FC = () => {
+interface IProps {
+    setModal?: React.Dispatch<React.SetStateAction<boolean>>
+    modal?: boolean
+    onClick?: React.MouseEventHandler<HTMLDivElement>
+}
+
+const NavbarIcons: React.FC<IProps> = ({ modal}) => {
+    const dispatch = useDispatch();
     return (
         <div className="flex justify-between p-5">
             <div className="navbar-logo-style">
@@ -10,6 +18,15 @@ const NavbarIcons: React.FC = () => {
             <div className="navbar-logo-style">
                 <AuthIcon className="w-7 h-7" />
             </div>
+            {!modal ? (
+                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() =>dispatch({type:"modal",payload:true})}>
+                    <HamburgerIcon className="w-7 h-7" />
+                </div>
+            ) : (
+                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() => dispatch({type:"modal",payload:false})}>
+                    <CloseMenuIcon className="w-7 h-7" />
+                </div>
+            )}
         </div>
     )
 }
