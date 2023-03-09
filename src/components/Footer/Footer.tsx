@@ -6,8 +6,8 @@ import FooterSocialMedia from './FooterSocialMedia';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-[#262626] w-full h-full">
-            <div className='flex flex-col items-center py-24 px-44'>
+        <footer className="bg-[#262626] w-full mx-auto h-full overflow-hidden">
+            <div className='flex flex-col items-center py-24 px-44 max-[1024px]:px-10'>
                 <div className="flex items-center justify-between  max-[1024px]:flex-col max-[1024px]:w-full">
                     <FooterForm/>
                     <FooterLinks/>

@@ -12,28 +12,28 @@ const CreatePackage = () => {
     return (
         <div className="flex flex-col w-6/12 max-[1100px]:w-full">
             <div className="flex justify-between items-center mb-5">
-                <h1 className="text-3xl font-[500]">Kendi Paketini Oluştur</h1>
+                <h1 className="text-2xl font-[500]">Kendi Paketini Oluştur</h1>
                 <span className="cursor-pointer">Nasıl çalışır?</span>
             </div>
             <div className="mb-20">
                 <p className="text-[#292828b2]">Tercih ve ihtiyaçların doğrultusunda seçeceğin ürünlerden ve miktarlardan, sana özel bir paket oluşturalım.</p>
             </div>
-            <div className="flex space-x-24 mb-10">
+            <div className="flex space-x-24 mb-10 max-[1150px]:space-x-5">
                 <div
                     onClick={() => setOpen({ normal: true, daily: false, tampon: false })}
-                    className={`${open.normal && 'underline underline-offset-8'} cursor-pointer`}
+                    className={`${open.normal && 'underline underline-offset-8'} cursor-pointer max-[1150px]:text-xs`}
                 >
                     beije Ped
                 </div>
                 <div
                     onClick={() => setOpen({ normal: false, daily: true, tampon: false })}
-                    className={`${open.daily && 'underline underline-offset-8'} cursor-pointer`}
+                    className={`${open.daily && 'underline underline-offset-8'} cursor-pointer max-[1150px]:text-xs`}
                 >
                     beije Günlük Ped
                 </div>
                 <div
                     onClick={() => setOpen({ normal: false, daily: false, tampon: true })}
-                    className={`${open.tampon && 'underline underline-offset-8'} cursor-pointer`}
+                    className={`${open.tampon && 'underline underline-offset-8'} cursor-pointer max-[1150px]:text-xs`}
                 >
                     beije Tampon
                 </div>

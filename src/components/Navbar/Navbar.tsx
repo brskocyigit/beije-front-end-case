@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
 
     return (
         <div className="w-full bg-[#F5F5F5] sticky top-0 z-10">
-            <div className="flex justify-between mx-36 p-1">
+            <div className="flex justify-between max-w-5xl mx-auto p-1 max-[1150px]:mx-2 ">
                 <NavbarLogo />
                 <NavbarLinks />
                 <NavbarIcons modal={modal} />

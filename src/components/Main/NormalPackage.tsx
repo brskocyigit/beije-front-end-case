@@ -20,7 +20,7 @@ function valuetext(value: number) {
 const NormalPackage = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{ width: 500 }}>
+            <Box sx={{ width: 500}}>
                 <div className="mb-10">
                     <h1>Standart Ped</h1>
                     <Slider

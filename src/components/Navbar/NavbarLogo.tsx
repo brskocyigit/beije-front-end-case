@@ -4,7 +4,7 @@ import Logo from '../../images/logo/beije-logo.png';
 const NavbarLogo: React.FC = () => {
     return (
         <div className="flex items-center justify-center cursor-pointer">
-            <img src={Logo} alt="Logo" width="72" height="72" />
+            <img src={Logo} alt="Logo" width="64" height="64" />
         </div>
     )
 }

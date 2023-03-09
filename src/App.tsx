@@ -1,10 +1,12 @@
 import React from 'react'
 import RootComponent from './RootComponent'
-// import { persistor, store } from './store/reducers/store'
-
 
 const App: React.FC = () => {
-    return <RootComponent />
+    return (
+        <div className='min-h-screen bg-[#f9f5f2]'>
+            <RootComponent />
+        </div>
+    )
 }
 
 export default App

@@ -16,7 +16,7 @@
     }
 
     .navbar-li-style{
-        @apply text-xl tracking-[-0.01em] font-[400]
+        @apply text-base tracking-[-0.01em] font-[400]
     }
 
     .navbar-logo-style{
