@@ -4,12 +4,15 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 import { Provider } from 'react-redux'
-import { store } from './redux/index'
+import { persistor, store } from './redux/index'
+import { PersistGate } from 'redux-persist/integration/react'
 
 const root = createRoot(document.getElementById('root')!) // createRoot(container!) if you use TypeScript
 root.render(
     <Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+            <App />
+        </PersistGate>
     </Provider>
 )
 

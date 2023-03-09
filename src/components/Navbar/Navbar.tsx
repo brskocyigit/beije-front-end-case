@@ -4,6 +4,7 @@ import NavbarIcons from './NavbarIcons'
 import NavbarLinks from './NavbarLinks'
 import NavbarLogo from './NavbarLogo'
 import {State} from '../../redux/index'
+import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
 
@@ -22,21 +23,21 @@ const Navbar: React.FC = () => {
                     className={`animate-slideOpen bg-[#f7f6f5] h-50 drop-shadow-xl absolute w-full`}
                 >
                     <ul className="flex flex-col">
-                        <a href="/#" className="p-4 mx-7">
-                            <li>Ürünler</li>
-                        </a>
-                        <a href="/#" className="p-4 mx-7">
-                            <li>Biz Kimiz</li>
-                        </a>
-                        <a href="/#" className="p-4 mx-7">
-                            <li>Bağış Kültürü</li>
-                        </a>
-                        <a href="/#" className="p-4 mx-7">
-                            <li>Blog</li>
-                        </a>
-                        <a href="/#" className="p-4 mx-7">
-                            <li>Kendi Paketini Oluştur</li>
-                        </a>
+                        <Link to={'/urunler'} className="p-4 mx-7">
+                            Ürünler
+                        </Link>
+                        <Link to={'/know-us'} className="p-4 mx-7">
+                            Biz Kimiz
+                        </Link>
+                        <Link to={'/donation-culture'} className="p-4 mx-7">
+                            Bağış Kültürü
+                        </Link>
+                        <Link to={'https://www.dongu.beije.co'} className="p-4 mx-7">
+                            Blog
+                        </Link>
+                        <Link to={'/custom-packet'} className="p-4 mx-7">
+                            Kendi Paketini Oluştur
+                        </Link>
                     </ul>
                 </div>
             )}

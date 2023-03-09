@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { useDispatch } from 'react-redux'
 
 
 const theme = createTheme({
@@ -18,6 +19,14 @@ function valuetext(value: number) {
 }
 
 const TamponPackage = () => {
+    const dispatch = useDispatch();
+    const [mini,setMini] = useState<any>(0);
+    const [standard,setStandard] = useState<any>(0)
+
+    useEffect(()=>{
+        dispatch({type:"mini",payload:mini});
+        dispatch({type:"standardtampon",payload:standard})
+    })
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ width: 500 }}>
@@ -33,6 +42,7 @@ const TamponPackage = () => {
                         marks
                         min={0}
                         max={60}
+                        onChangeCommitted={(_, v) => setMini(v)}
                     />
                 </div>
 
@@ -48,6 +58,7 @@ const TamponPackage = () => {
                         marks
                         min={0}
                         max={60}
+                        onChangeCommitted={(_, v) => setStandard(v)}
                     />
                 </div>
             </Box>

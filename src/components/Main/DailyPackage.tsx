@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
+import { useDispatch } from 'react-redux'
 
 
 const theme = createTheme({
@@ -13,11 +14,18 @@ const theme = createTheme({
 })
 
 function valuetext(value: number) {
-    console.log(`${value}`)
     return `${value}°C`
 }
 
 const DailyPackage = () => {
+    const dispatch = useDispatch();
+    const [daily,setDaily] = useState<any>(0);
+    const [superDaily,setSuperDaily] = useState<any>(0)
+    
+    useEffect(()=>{
+        dispatch({type:"daily",payload:daily});
+        dispatch({type:"superdaily",payload:superDaily})
+    })
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ width: 500 }}>
@@ -33,6 +41,7 @@ const DailyPackage = () => {
                         marks
                         min={0}
                         max={60}
+                        onChangeCommitted={(_, v) => setDaily(v)}
                     />
                 </div>
 
@@ -48,6 +57,7 @@ const DailyPackage = () => {
                         marks
                         min={0}
                         max={60}
+                        onChangeCommitted={(_, v) => setSuperDaily(v)}
                     />
                 </div>
             </Box>

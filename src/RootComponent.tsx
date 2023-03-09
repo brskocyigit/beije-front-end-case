@@ -5,6 +5,9 @@ import Navbar from './components/Navbar/Navbar';
 import { ROUTES } from './resources/routes-constants'
 import Footer from './components/Footer/Footer';
 import NotFound from './pages/NotFound';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Cart from './pages/Cart';
 
 
 const RootComponent: React.FC = () => {
@@ -13,6 +16,9 @@ const RootComponent: React.FC = () => {
             <Navbar/>
             <Routes>
                 <Route path={ROUTES.HOMEPAGE_ROUTE} element={<Home />} />
+                <Route path={ROUTES.LOGIN} element={<Login/>}/>
+                <Route path={ROUTES.REGISTER} element={<Register/>}/>
+                <Route path={ROUTES.CART} element={<Cart/>}/>
                 <Route path={ROUTES.NOTFOUND_ROUTE} element={<NotFound />} />
             </Routes>
             <Footer/>

@@ -6,4 +6,9 @@ interface ModalAction {
     payload:boolean
 }
 
-export type Action = ModalAction
+interface PackageAction{
+    type:"standard" | "super" | "superplus" | "daily" | "superdaily" | "mini" | "standardtampon",
+    payload:number
+}
+
+export type Action = ModalAction | PackageAction

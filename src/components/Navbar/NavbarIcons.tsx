@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { AuthIcon, CloseMenuIcon, GroceryIcon, HamburgerIcon } from '../../icons/Icon'
 
 interface IProps {
@@ -11,12 +12,12 @@ const NavbarIcons: React.FC<IProps> = ({ modal}) => {
     const dispatch = useDispatch();
     return (
         <div className="flex justify-between p-5">
-            <div className="navbar-logo-style">
+            <Link to={'/cart'} className="navbar-logo-style">
                 <GroceryIcon className="w-6 h-6" />
-            </div>
-            <div className="navbar-logo-style">
+            </Link>
+            <Link to={'/auth/login'} className="navbar-logo-style">
                 <AuthIcon className="w-6 h-6" />
-            </div>
+            </Link>
             {!modal ? (
                 <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() =>dispatch({type:"modal",payload:true})}>
                     <HamburgerIcon className="w-7 h-7" />
