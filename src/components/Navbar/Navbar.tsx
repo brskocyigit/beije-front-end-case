@@ -3,12 +3,11 @@ import { useSelector } from 'react-redux'
 import NavbarIcons from './NavbarIcons'
 import NavbarLinks from './NavbarLinks'
 import NavbarLogo from './NavbarLogo'
-import {State} from '../../redux/index'
+import { State } from '../../redux/index'
 import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
-
-    const {modal} = useSelector((state:State)=>state.modal);
+    const { modal } = useSelector((state: State) => state.modal)
 
     return (
         <div className="w-full bg-[#F5F5F5] sticky top-0 z-10">
@@ -18,10 +17,7 @@ const Navbar: React.FC = () => {
                 <NavbarIcons modal={modal} />
             </div>
             {modal && (
-                <div
-                    id="hambuger-menu"
-                    className={`animate-slideOpen bg-[#f7f6f5] h-50 drop-shadow-xl absolute w-full`}
-                >
+                <div id="hambuger-menu" className={`animate-slideOpen bg-[#f7f6f5] h-50 drop-shadow-xl absolute w-full`}>
                     <ul className="flex flex-col">
                         <Link to={'/urunler'} className="p-4 mx-7">
                             Ürünler

@@ -8,8 +8,8 @@ interface IProps {
     onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
-const NavbarIcons: React.FC<IProps> = ({ modal}) => {
-    const dispatch = useDispatch();
+const NavbarIcons: React.FC<IProps> = ({ modal }) => {
+    const dispatch = useDispatch()
     return (
         <div className="flex justify-between p-5">
             <Link to={'/cart'} className="navbar-logo-style">
@@ -19,11 +19,11 @@ const NavbarIcons: React.FC<IProps> = ({ modal}) => {
                 <AuthIcon className="w-6 h-6" />
             </Link>
             {!modal ? (
-                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() =>dispatch({type:"modal",payload:true})}>
+                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() => dispatch({ type: 'modal', payload: true })}>
                     <HamburgerIcon className="w-7 h-7" />
                 </div>
             ) : (
-                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() => dispatch({type:"modal",payload:false})}>
+                <div className="navbar-logo-style hidden max-[1150px]:flex" onClick={() => dispatch({ type: 'modal', payload: false })}>
                     <CloseMenuIcon className="w-7 h-7" />
                 </div>
             )}

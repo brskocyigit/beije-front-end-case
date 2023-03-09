@@ -4,7 +4,6 @@ import Slider from '@mui/material/Slider'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useDispatch } from 'react-redux'
 
-
 const theme = createTheme({
     palette: {
         primary: {
@@ -18,13 +17,13 @@ function valuetext(value: number) {
 }
 
 const DailyPackage = () => {
-    const dispatch = useDispatch();
-    const [daily,setDaily] = useState<any>(0);
-    const [superDaily,setSuperDaily] = useState<any>(0)
-    
-    useEffect(()=>{
-        dispatch({type:"daily",payload:daily});
-        dispatch({type:"superdaily",payload:superDaily})
+    const dispatch = useDispatch()
+    const [daily, setDaily] = useState<any>(0)
+    const [superDaily, setSuperDaily] = useState<any>(0)
+
+    useEffect(() => {
+        dispatch({ type: 'daily', payload: daily })
+        dispatch({ type: 'superdaily', payload: superDaily })
     })
     return (
         <ThemeProvider theme={theme}>
@@ -45,7 +44,7 @@ const DailyPackage = () => {
                     />
                 </div>
 
-                <div className='mb-10'>
+                <div className="mb-10">
                     <h1>Süper Günlük Ped</h1>
                     <Slider
                         color="primary"

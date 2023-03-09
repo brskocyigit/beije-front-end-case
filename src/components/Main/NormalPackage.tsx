@@ -13,24 +13,23 @@ const theme = createTheme({
 })
 
 const NormalPackage = () => {
-    const dispatch = useDispatch();
-    const [standard, setStandard] = useState<any>(0);
-    const [superPed, setSuperPed] = useState<any>(0);
-    const [superPlus, setSuperPlus] = useState<any>(0);
-    
+    const dispatch = useDispatch()
+    const [standard, setStandard] = useState<any>(0)
+    const [superPed, setSuperPed] = useState<any>(0)
+    const [superPlus, setSuperPlus] = useState<any>(0)
+
     function valuetext(value: number) {
         return `${value}°C`
     }
 
-    useEffect(()=>{
-        dispatch({type:"standard",payload:standard})
-        dispatch({type:"super",payload:superPed})
-        dispatch({type:"superplus",payload:superPlus})
+    useEffect(() => {
+        dispatch({ type: 'standard', payload: standard })
+        dispatch({ type: 'super', payload: superPed })
+        dispatch({ type: 'superplus', payload: superPlus })
     })
 
     return (
         <ThemeProvider theme={theme}>
-            
             <Box sx={{ width: 500 }}>
                 <div className="mb-10">
                     <h1>Standart Ped</h1>
