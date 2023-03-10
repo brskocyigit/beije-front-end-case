@@ -32,3 +32,34 @@ Slider'ın değeri değiştiğinde, ilgili ürünün değerini güncelleyebilirs
   onChange={(event, value) => setSelectedProducts({...selectedProducts, product1: value})}
 />
 ```
+Daha sonra bu kodlar bana bir çözüm yolu gösterdi.Her bir slidera pakete özel bir handleChange fonksiyonu tanımladım ve bu fonksiyonu Slider\
+onChange fonksiyonu olarak tanımladım.Bu onChange fonksiyonu uygun pakete özel statei değiştiriyor ve bu değeri dispatch ile reduxta tutuyor.
+
+Example:
+
+```
+const [standard, setStandard] = useState<any>(0)
+
+function handleStandardChange(value:any){
+       setStandard(value);
+       dispatch({ type: 'standard', payload: standard })
+}
+
+const normalCount:Normal = useSelector((state:State)=>state.normalPackage)
+```
+
+```
+<Slider
+       color="primary"
+       aria-label="Package Slider"
+       defaultValue={normalCount.amountStandard}
+       value={normalCount.amountStandard}
+       getAriaValueText={valuetext}
+       valueLabelDisplay="auto"
+       step={10}
+       marks
+       min={0}
+       max={60}
+       onChangeCommitted={(_, value) => handleStandardChange(value)}
+/>
+```
