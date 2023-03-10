@@ -41,8 +41,8 @@ const Cart = () => {
                 <div className='flex flex-col justify-between items-center'>
                    <span className='p-3 flex font-[500]'>Promosyon Kodu Gir</span>
                    <div className='flex justify-between items-center space-x-5'>
-                      <input className="p-3 focus-within:outline-none border border-gray-300 rounded-lg" placeholder='Kodunuz'/>
-                      <div className='w-24 h-12 bg-zinc-700 text-white flex items-center justify-center cursor-pointer rounded-full hover:bg-black transform transition-colors duration-300'>Uygula</div>
+                      <input className="w-8/12 p-3 focus-within:outline-none border border-gray-300 rounded-lg" placeholder='Kodunuz'/>
+                      <div className='w-4/12 h-12 bg-zinc-700 text-white flex items-center justify-center cursor-pointer rounded-full hover:bg-black transform transition-colors duration-300'>Uygula</div>
                    </div>
                 </div>
                 <div className='h-[0.5px] w-full bg-gray-300'/>
