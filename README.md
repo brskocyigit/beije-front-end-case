@@ -16,6 +16,8 @@ yardım aldım.Bunu ayrı bir giste ekledim.Teşekkürler!
 
 <br />
 
+#### Proje canlı hali : https://beije.netlify.app
+
 # 🚀 Available Scripts
 
 Projeyi başlatmak için öncelikle node_modules indirilmelidir.
