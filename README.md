@@ -25,7 +25,7 @@ Projeyi başlatmak için öncelikle node_modules indirilmelidir.
 # install
 
 ```
-npm start
+npm install
 ```
 Daha sonra uygulamayı başlatın.
 
