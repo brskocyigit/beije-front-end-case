@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import LoginImg from '../images/login/login.webp'
+
 
 const Login = () => {
     return (
