@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { State } from '../../redux/index'
+import { Tampon} from '../../types/type'
 
+//Material UI slider default rengini değiştirmek için kullandım.
 const theme = createTheme({
     palette: {
         primary: {
@@ -19,13 +23,26 @@ function valuetext(value: number) {
 
 const TamponPackage = () => {
     const dispatch = useDispatch()
+
+    //OnChange fonksiyonundan gelen slider değerlerini tutmak için gerekli stateler.
     const [mini, setMini] = useState<any>(0)
     const [standard, setStandard] = useState<any>(0)
 
-    useEffect(() => {
+    //Seçili mini tampon paketi sayısını getirir ve "mini" stateine atar.Daha sonra reduxta tanımlı "mini" state'i değiştirir.
+    function handleMiniChange(value:any){
+        setMini(value);
         dispatch({ type: 'mini', payload: mini })
+    }
+    
+    //Seçili standard tampon paketi sayısını getirir ve "standard" stateine atar.Daha sonra reduxta tanımlı "standardtampon" state'i değiştirir.
+    function handleStandardChange(value:any){
+        setStandard(value);
         dispatch({ type: 'standardtampon', payload: standard })
-    })
+    }
+    
+    //Reduxtan güncel paket sayılarını getirir.
+    const tamponCount:Tampon = useSelector((state:State)=>state.tamponPackage)
+
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ width: 500 }}>
@@ -34,14 +51,15 @@ const TamponPackage = () => {
                     <Slider
                         color="primary"
                         aria-label="Package Slider"
-                        defaultValue={0}
+                        defaultValue={tamponCount.amountMini}
+                        value={tamponCount.amountMini}
                         getAriaValueText={valuetext}
                         valueLabelDisplay="auto"
                         step={10}
                         marks
                         min={0}
                         max={60}
-                        onChangeCommitted={(_, v) => setMini(v)}
+                        onChangeCommitted={(_, value) => handleMiniChange(value)}
                     />
                 </div>
 
@@ -50,14 +68,15 @@ const TamponPackage = () => {
                     <Slider
                         color="primary"
                         aria-label="Package Slider"
-                        defaultValue={0}
+                        defaultValue={tamponCount.amountStandard}
+                        value={tamponCount.amountStandard}
                         getAriaValueText={valuetext}
                         valueLabelDisplay="auto"
                         step={10}
                         marks
                         min={0}
                         max={60}
-                        onChangeCommitted={(_, v) => setStandard(v)}
+                        onChangeCommitted={(_, value) => handleStandardChange(value)}
                     />
                 </div>
             </Box>

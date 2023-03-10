@@ -9,11 +9,11 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 const root = createRoot(document.getElementById('root')!) // createRoot(container!) if you use TypeScript
 root.render(
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
+    <PersistGate loading={null} persistor={persistor}>
+        <Provider store={store}>
             <App />
-        </PersistGate>
-    </Provider>
+        </Provider>
+    </PersistGate>
 )
 
 // If you want your app to work offline and load faster, you can change

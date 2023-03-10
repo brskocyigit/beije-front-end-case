@@ -7,9 +7,11 @@ import { State } from '../../redux/index'
 import { Normal, Daily, Tampon } from '../../types/type'
 
 const Order = () => {
+    //Reduxtan gelen paket bilgilerini tutan değişkenler.
     const normal: Normal = useSelector((state: State) => state.normalPackage)
     const daily: Daily = useSelector((state: State) => state.dailyPackage)
     const tampon: Tampon = useSelector((state: State) => state.tamponPackage)
+    //Toplam fiyat
     const total = normal.standard + normal.super + normal.superplus + daily.daily + daily.superDaily + tampon.mini + tampon.standardTampon
 
     return (

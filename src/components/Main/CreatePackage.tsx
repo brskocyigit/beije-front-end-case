@@ -19,6 +19,7 @@ const CreatePackage = () => {
                 <p className="text-[#292828b2]">Tercih ve ihtiyaçların doğrultusunda seçeceğin ürünlerden ve miktarlardan, sana özel bir paket oluşturalım.</p>
             </div>
             <div className="flex space-x-24 mb-10 max-[1150px]:space-x-5 justify-center items-center">
+                {/* {Hangi paket seçilmişse onun state'ini true diğerlerini false yapar } */}
                 <div
                     onClick={() => setOpen({ normal: true, daily: false, tampon: false })}
                     className={`${open.normal && 'underline underline-offset-8'} cursor-pointer `}
@@ -38,6 +39,7 @@ const CreatePackage = () => {
                     beije Tampon
                 </div>
             </div>
+            {/**SLIDER BÖLÜMÜ - Paketlerin state durumuna göre uygun sliderı getirir*/ }
             <div className='flex w-full items-center justify-center'>
                 {open.normal && <NormalPackage />}
                 {open.daily && <DailyPackage />}

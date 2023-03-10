@@ -7,6 +7,7 @@ import { State } from '../../redux/index'
 import { Link } from 'react-router-dom'
 
 const Navbar: React.FC = () => {
+    //Ekran küçüldüğünde çıkan hamburger menüye tıklanıp tıklanmadığını kontrol etmek için kullandım.
     const { modal } = useSelector((state: State) => state.modal)
 
     return (
