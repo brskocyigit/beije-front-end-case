@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Register = () => {
     return (
         <div className="h-full flex justify-between mx-auto max-[1150px]:flex-col">
-            <div className="w-6/12 max-[1150px]:w-full bg-contain bg-center">
+            <div className="w-6/12 max-[1150px]:w-full">
                 <img src="https://beije.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsign-up.41526b0e.webp&w=1920&q=75" alt="Login" className='h-full bg-contain bg-center' />
             </div>
             <div className="w-6/12 h-full space-y-16 max-[1150px]:w-full p-5">
